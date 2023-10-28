@@ -19,37 +19,35 @@ $XL: 1170px;
     }
 
     @else if $canvas ==MD {
-        @media only screen and (min-width: $MD) {
+        @media only screen and (min-width: $MD) and (max-width: 1336px) {
             @content;
         }
     }
 
     @else if $canvas ==XL {
-        @media only screen and (min-width: $XL) {
+        @media only screen and (min-width: $XL) and (max-width: 1600px) {
             @content;
         }
     }
 }
+
 ul.menu {
     list-style-type: none !important;
     margin: 0;
     padding: 0;
     overflow: hidden;
     display: flex;
-    flex: 1;
+    flex: 2;
     justify-content: space-around;
-    @include Responsive(XL) {
-            display: flex;
+        @include Responsive(MD) {
+                display: none;
         }
-    
         @include Responsive(SM) {
-            display: flex;
-            flex: 3;
-        }
-    
+            display: none;
         @include Responsive(XS) {
             display: none;
         }
+    
 }
 
 
@@ -63,5 +61,6 @@ li.menu {
         transition: all 0.3s ease-in-out;
         cursor: pointer !important;
 
+        }
     }
 }

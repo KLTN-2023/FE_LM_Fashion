@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Layout className='layout'>
+          <div style={{ backgroundColor: 'black' }}>
           <CustomHeader />
+          </div>
           {children}
         </Layout>
       </body>

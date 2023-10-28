@@ -17,10 +17,12 @@ const headerStyle: React.CSSProperties = {
     height: 64,
     paddingInline: 50,
     lineHeight: '64px',
-    backgroundColor: '#001529',
+    backgroundColor: 'black',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: 200,
+    marginRight: 200,
 };
 
 function CustomHeader() {

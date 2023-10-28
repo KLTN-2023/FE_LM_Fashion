@@ -51,7 +51,9 @@ function UserItem() {
                     <UserOutlined />
                 </Dropdown>
             </div>
-            <ShoppingCartOutlined style={{ color: 'white', fontSize: '1.6rem' }} />
+            <ShoppingCartOutlined
+                className={styles['user__cart']}
+                style={{ color: 'white', fontSize: '1.6rem' }} />
             <Tag
                 color='white'
                 style={{

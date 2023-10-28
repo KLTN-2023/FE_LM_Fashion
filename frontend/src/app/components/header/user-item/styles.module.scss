@@ -35,7 +35,7 @@ $XL: 1170px;
 .user {
     &__container {
         display: flex;
-        flex: 1;
+        flex: 1.5;
         justify-content: flex-end;
         align-items: center;
     }
@@ -53,8 +53,9 @@ $XL: 1170px;
     }
 
     &__search {
-        width: 150px;
-        margin-inline-end: 40px;
+        width: 200px;
+            margin-inline-end: 30px;
+            margin-inline-start: 20px;
         @include Responsive(XL) {
                 width: 300px;
             }
