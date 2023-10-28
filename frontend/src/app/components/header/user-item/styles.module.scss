@@ -1,3 +1,37 @@
+$desktop-with: 1024px;
+
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+
+// media queries
+
+@mixin Responsive($canvas) {
+    @if $canvas ==XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==SM {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==MD {
+        @media only screen and (min-width: $MD) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    }
+}
 .user {
     &__container {
         display: flex;
@@ -9,9 +43,8 @@
     &__item {
         justify-content: flex-end;
         text-align: center;
-        font-size: 1.2rem;
-        margin-inline-end: 40px;
-
+        font-size: 1.4rem;
+            margin-inline-end: 30px;
         :hover {
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -20,8 +53,22 @@
     }
 
     &__search {
-        width: 250px;
+        width: 150px;
         margin-inline-end: 40px;
+        @include Responsive(XL) {
+                width: 300px;
+            }
+        
+            @include Responsive(MD) {
+                width: 200px;
+            }
+        }
+        
+        &__cart {
+            :hover {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
     }
 }
 

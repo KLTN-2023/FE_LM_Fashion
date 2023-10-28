@@ -1,9 +1,10 @@
 'use client'
 import React from 'react';
+import { isEmpty, isNil } from 'rambda';
 import menuItem from '@/app/static/header-item.json';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Dropdown, Input, message } from 'antd';
+import { Badge, Dropdown, Input, Space, Tag, message } from 'antd';
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.scss';
 // ----------------------------------------------
@@ -22,7 +23,10 @@ function UserItem() {
         router.push(item?.link || '/');
     }
     const handleSearch = (value: string) => {
-        message.info(value)
+        if (isEmpty(value) || isNil(value))
+            message.error('Please enter a search term');
+        else 
+            message.info(value)
     }
 
     const menuList = {
@@ -47,7 +51,18 @@ function UserItem() {
                     <UserOutlined />
                 </Dropdown>
             </div>
-            <ShoppingCartOutlined className={styles['user__item']} />
+            <ShoppingCartOutlined style={{ color: 'white', fontSize: '1.6rem' }} />
+            <Tag
+                color='white'
+                style={{
+                    fontSize: '14px', fontWeight: '600', paddingRight: '8px', paddingLeft: '8px'
+                    , color: 'red', marginLeft: '5px'
+                }}>
+                11
+            </Tag>
+
+
+
         </div >
     )
 }
