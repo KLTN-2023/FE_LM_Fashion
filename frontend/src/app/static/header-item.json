@@ -1,0 +1,36 @@
+{
+    "menuItem": [
+        {
+            "id": 1,
+            "label": "SALE"
+        },
+        {
+            "id": 2,
+            "label": "ÁO THUN"
+        },
+        {
+            "id": 3,
+            "label": "QUẦN"
+        },
+        {
+            "id": 4,
+            "label": "ABOUT"
+        }
+    ],
+    "userMenuItem": [
+        {
+            "label": "Thông tin",
+            "key": "1",
+            "link": "user-info"
+        },
+        {
+            "label": "Ví voucher",
+            "key": "2"
+        },
+        {
+            "label": "Lịch sử đơn hàng",
+            "key": "3",
+            "danger": true
+        }
+    ]
+}

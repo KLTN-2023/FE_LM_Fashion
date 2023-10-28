@@ -1,0 +1,31 @@
+.user {
+    &__container {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__item {
+        justify-content: flex-end;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-inline-end: 40px;
+
+        :hover {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+    }
+
+    &__search {
+        width: 250px;
+        margin-inline-end: 40px;
+    }
+}
+
+.icon {
+    border: none;
+    color: white;
+}

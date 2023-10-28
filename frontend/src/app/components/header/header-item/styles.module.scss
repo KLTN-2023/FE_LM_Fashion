@@ -1,0 +1,23 @@
+ul.menu {
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+
+li.menu {
+    width: 100px;
+    text-align: center;
+    font-size: 1.1rem;
+
+    &:hover {
+        background-color: #ff0000 !important;
+        transition: all 0.3s ease-in-out;
+
+    }
+}
