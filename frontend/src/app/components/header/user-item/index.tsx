@@ -51,15 +51,11 @@ function UserItem() {
                     <UserOutlined />
                 </Dropdown>
             </div>
-            <ShoppingCartOutlined
-                className={styles['user__cart']}
-                style={{ color: 'white', fontSize: '1.6rem' }} />
+            <ShoppingCartOutlined className={styles['user__cart']} />
             <Tag
+                className={styles['user__tag']}
                 color='white'
-                style={{
-                    fontSize: '14px', fontWeight: '600', paddingRight: '8px', paddingLeft: '8px'
-                    , color: 'red', marginLeft: '5px'
-                }}>
+            >
                 11
             </Tag>
 

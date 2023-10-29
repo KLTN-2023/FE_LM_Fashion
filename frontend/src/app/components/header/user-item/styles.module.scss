@@ -43,8 +43,8 @@ $XL: 1170px;
     &__item {
         justify-content: flex-end;
         text-align: center;
-        font-size: 1.4rem;
-            margin-inline-end: 30px;
+        font-size: 1.6rem;
+        margin-inline-end: 30px;
         :hover {
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -56,21 +56,31 @@ $XL: 1170px;
         width: 200px;
             margin-inline-end: 30px;
             margin-inline-start: 20px;
-        @include Responsive(XL) {
+            @include Responsive(XL) {
                 width: 300px;
             }
-        
             @include Responsive(MD) {
                 width: 200px;
             }
-        }
-        
-        &__cart {
-            :hover {
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-            }
     }
+        
+    &__cart {
+        color: white;
+        font-size: 1.8rem;
+        :hover {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;    
+        }
+    }
+    &__tag{
+        font-size: 14px;
+        font-weight: 600;
+        padding-right: 8px;
+        padding-left: 8px;
+        color: red !important;
+        margin-left: 5px;        
+    }
+
 }
 
 .icon {

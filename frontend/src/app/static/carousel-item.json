@@ -1,0 +1,14 @@
+{
+    "promotion": [
+        {
+            "key": "1",
+            "title": "Promotion 1",
+            "image": "https://media.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/October2023/ssFALL_WINTER.jpg"
+        },
+        {
+            "key": "2",
+            "title": "Promotion 2",
+            "image": "https://media.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/October2023/ssdBanner-50-thudong2_(1).jpg"
+        }
+    ]
+}
