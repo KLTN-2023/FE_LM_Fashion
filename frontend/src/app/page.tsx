@@ -1,14 +1,22 @@
 'use client'
-import styles from './page.module.css'
+import { useCallback } from 'react'
 import CustomCarousel from '@/app/components/carousel'
 import carouselItems from '@/app/static/carousel-item.json'
+import ListData from './components/list-data'
 
 export default function Home() {
   const promotionItems = [...carouselItems.promotion]
+  const onPagination = useCallback((page: number) => { console.log(page) }, [])
 
   return (
-    <main >
-      <CustomCarousel items={promotionItems} />
+    <main>
+      <CustomCarousel items={promotionItems} style={{ marginTop: '50px!important' }} />
+      <ListData
+        className=''
+        itemLayout='horizontal'
+        onPagination={onPagination}
+        pageSize={4}
+      />
     </main>
   )
 }

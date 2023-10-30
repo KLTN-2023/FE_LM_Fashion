@@ -1,8 +1,8 @@
+import { FloatButton, Layout } from 'antd'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import CustomHeader from './components/header'
 import './globals.css'
-import { Layout } from 'antd'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -38,23 +38,24 @@ ul.menu {
     overflow: hidden;
     display: flex;
     flex: 2;
+    font-weight: 500;
     justify-content: space-around;
         @include Responsive(MD) {
-                display: none;
+            display: none;
         }
         @include Responsive(SM) {
-            display: none;
+        display: none;
         @include Responsive(XS) {
             display: none;
         }
-    
+        
 }
 
 
 li.menu {
     width: 100px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 
     &:hover {
         background-color: #ff0000 !important;

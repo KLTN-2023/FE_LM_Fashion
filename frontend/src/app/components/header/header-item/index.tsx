@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import headerItem from '@/app/static/header-item.json'
 import styles from './styles.module.scss'
 // ----------------------------------------------
