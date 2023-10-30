@@ -14,8 +14,13 @@
         },
         {
             "id": 4,
+            "label": "PHỤ KIỆN"
+        },
+        {
+            "id": 5,
             "label": "ABOUT"
         }
+       
     ],
     "userMenuItem": [
         {

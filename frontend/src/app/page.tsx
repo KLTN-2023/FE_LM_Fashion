@@ -9,7 +9,7 @@ export default function Home() {
   const onPagination = useCallback((page: number) => { console.log(page) }, [])
 
   return (
-    <main>
+    <main style={{ marginTop: '80px ', }}>
       <CustomCarousel items={promotionItems} style={{ marginTop: '50px!important' }} />
       <ListData
         className=''

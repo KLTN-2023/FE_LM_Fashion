@@ -54,8 +54,9 @@ $XL: 1170px;
 
     &__search {
         width: 200px;
-            margin-inline-end: 30px;
-            margin-inline-start: 20px;
+        margin-inline-end: 30px;
+        margin-inline-start: 20px;
+        
             @include Responsive(XL) {
                 width: 300px;
             }

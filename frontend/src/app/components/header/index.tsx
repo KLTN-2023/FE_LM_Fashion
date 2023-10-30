@@ -14,15 +14,22 @@ type HeaderItem = {
 const headerStyle: React.CSSProperties = {
     textAlign: 'center',
     color: '#fff',
-    height: 64,
-    paddingInline: 50,
-    lineHeight: '64px',
+    height: 80,
+    lineHeight: '80px',
     backgroundColor: 'black',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 200,
-    marginRight: 200,
+    position: 'fixed',
+    zIndex: 999999,
+    top: 0,
+    left: 0,
+    width: '100%',
+    paddingBottom: '0px!important',
+    boxShadow: `0 2px 24px 0 rgb(0 0 0 / 15%)`,
+    animation: `500ms ease-in-out 0s normal none 1 running fadeInDown`,
+
+    
 };
 
 function CustomHeader() {
