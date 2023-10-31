@@ -9,13 +9,12 @@ export default function Home() {
   const onPagination = useCallback((page: number) => { console.log(page) }, [])
 
   return (
-    <main style={{ marginTop: '80px ', }}>
-      <CustomCarousel items={promotionItems} style={{ marginTop: '50px!important' }} />
+    <main style={{ marginTop: '80px' }}>
+      <CustomCarousel items={promotionItems} style={{ marginTop: '50px !important' }} />
       <ListData
-        className=''
         itemLayout='horizontal'
         onPagination={onPagination}
-        pageSize={4}
+        pageSize={6}
       />
     </main>
   )

@@ -1,16 +1,16 @@
 'use client'
 import { Layout } from 'antd';
-import React from "react";
 import HeaderItem from './header-item';
-import Logo from './logo';
 import UserItem from './user-item';
-
+import Logo from './logo';
+// ----------------------------------------------------------------------
 const { Header } = Layout;
+
 type HeaderItem = {
     key: number;
     label: string;
 }
-// ----------------------------------------------------------------------
+
 const headerStyle: React.CSSProperties = {
     textAlign: 'center',
     color: '#fff',
@@ -21,7 +21,7 @@ const headerStyle: React.CSSProperties = {
     alignItems: 'center',
     justifyContent: 'center',
     position: 'fixed',
-    zIndex: 999999,
+    zIndex: 100,
     top: 0,
     left: 0,
     width: '100%',
@@ -31,23 +31,16 @@ const headerStyle: React.CSSProperties = {
 
     
 };
-
+// -----------------------------------------------------------------------------
 function CustomHeader() {
-
 
     return (
         <Header style={headerStyle}>
             <Logo />
             <HeaderItem />
             <UserItem />
-            {/* <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['2']}
-                items={items}
-            /> */}
         </Header>
     )
 }
 
-export default React.memo(CustomHeader);
+export default (CustomHeader);

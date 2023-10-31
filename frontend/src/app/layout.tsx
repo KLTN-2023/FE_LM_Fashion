@@ -1,4 +1,5 @@
-import { FloatButton, Layout } from 'antd'
+import { Layout } from 'antd'
+import { Footer } from 'antd/es/layout/layout'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import CustomHeader from './components/header'
@@ -21,9 +22,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <Layout className='layout'>
           <div style={{ backgroundColor: 'black' }}>
-          <CustomHeader />
+            <CustomHeader />
           </div>
           {children}
+          <div>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+          </div>
         </Layout>
       </body>
     </html>

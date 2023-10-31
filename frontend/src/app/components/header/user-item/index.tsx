@@ -44,7 +44,7 @@ function UserItem() {
                 onSearch={handleSearch}
             />
             <div className={styles['user__item']}>
-                <Dropdown menu={menuList} placement='bottom' overlayStyle={{ width: '140px' }}>
+                <Dropdown menu={menuList} placement='bottom' overlayStyle={{ width: '160px' }}>
                     <UserOutlined />
                 </Dropdown>
             </div>

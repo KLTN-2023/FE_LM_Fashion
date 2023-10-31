@@ -3,6 +3,9 @@
         flex: 1;
         display: flex;
         justify-content: flex-start;
+        :hover {
+            cursor: pointer;
+        }
 
     }
 }

@@ -21,7 +21,10 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ items, arrows, ...other
                     <Image
                         src={item.image}
                         alt={item.title}
-                        style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
+                        style={{
+                            width: '100%', height: 'auto', objectFit: 'cover',
+                            objectPosition: 'center', imageRendering: '-webkit-optimize-contrast'
+                        }}
                         preview={false}
                     />
                 </div>
