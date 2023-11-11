@@ -37,5 +37,19 @@
             "key": "3",
             "danger": true
         }
+    ],
+    "guestMenuItem":[
+        {
+            "label": "Đăng nhập",
+            "key": "4",
+            "link": "login"
+
+        },
+        {
+            "label": "Đăng ký",
+            "key": "5",
+            "link":""
+        }
+
     ]
 }
