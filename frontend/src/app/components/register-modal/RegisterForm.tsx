@@ -1,57 +1,53 @@
-import { Button, Divider, Flex, Form, Input, InputNumber, Space } from "antd";
+import { Button, Divider, Flex, Form, Input, InputNumber } from "antd";
+import { RegisterFormikProps, initialValues, createValidationSchema } from "./RegisterFormCommon";
 import Title from "antd/es/typography/Title";
 import staticText from '@/app/static/home-text.json'
+import { FormikProvider, useFormik } from "formik";
+import Paragraph from "../paragraph/Paragraph";
+import { FMSubmitButton, FMTextField } from "@/app/formik";
+import FMPasswordField from "@/app/formik/FMPasswordField";
+// --------------------------------------------------------
+type RegisterForm = {
+    setAction: Function
+}
+// --------------------------------------------------------
+const RegisterForm = ({ setAction }: RegisterForm) => {
+    const handleChangeAction = () => {
+        setAction('login')
+    }
+    const fomrikBag = useFormik({
+        initialValues,
+        onSubmit: (values: RegisterFormikProps) => {
+            console.log(values)
+        },
+        validationSchema: createValidationSchema
+    })
 
-const RegisterForm = () => (
-    <Form
-        title="Đăng ký"
-        name="basic"
-        style={{ flex: 1 }}
-        autoComplete="false"
-    >
-        <Title style={{ marginBottom: 20 }} level={2}> Đăng ký</Title>
-        <p>
-            {staticText.registerDescription}
-        </p>
-        <Divider />
-        <Flex wrap="wrap" gap={10} justify={'space-between'} >
-            <Form.Item
-                style={{ flex: 2 }}
-                name="name"
+    return (
+        <FormikProvider value={fomrikBag}>
+            <Form
+                title="Đăng ký" style={{ flex: 1 }}
+                autoComplete="false"
             >
-                <Input size="large" placeholder="Tên" />
-            </Form.Item>
-            <Form.Item
-                style={{ flex: 1.5 }}
-                name="phone"
-            >
-                <InputNumber size="large" type="number" placeholder="Số điện thoại" controls={false} style={{ width: '100%' }} />
-            </Form.Item>
-        </Flex>
-        <Form.Item
-            name="email"
-            required
-        >
-            <Input size="large" placeholder="Email của bạn" required allowClear />
-        </Form.Item>
-        <Form.Item
-            name="password"
-            required
-        >
-            <Input.Password size="large" placeholder="Mật khẩu" required allowClear />
-        </Form.Item>
-        <Form.Item
-            name="confirmpassword"
-            required
-        >
-            <Input.Password size="large" placeholder="Nhập lại mật khẩu" required allowClear />
-        </Form.Item>
-        <Form.Item >
-            <Button type="primary" htmlType="submit" size="large" style={{ width: '100%' }}>
-                Đăng ký
-            </Button>
-        </Form.Item>
-    </Form>
-)
+                <Title style={{ marginBottom: 20 }} level={2} > Đăng ký</Title>
+                <Paragraph text={staticText.registerDescription} />
+                <Divider />
+                <Flex wrap="wrap" gap={10} justify={'space-between'} >
+                    <FMTextField placeholder={'Tên'} name={'name'} allowClear formStyle={{ flex: 2 }} />
+                    <FMTextField placeholder={'Số điện thoại'} name={'phone'} allowClear formStyle={{ flex: 1 }} />
+                </Flex>
+                <FMTextField placeholder={'Email'} name={'email'} allowClear />
+                <FMPasswordField placeholder={'Mật khẩu'} name={'password'} allowClear />
+                <FMPasswordField placeholder={'Nhập lại mật khẩu'} name={'confirmPassword'} allowClear />
+                <FMSubmitButton context={'Đăng ký'} />
+                <Button
+                    type={'link'} style={{ paddingLeft: 0 }}
+                    onClick={handleChangeAction}>
+                    Đã có tài khoản?&nbsp;&nbsp;Đăng nhập
+                </Button>
+            </Form>
+        </FormikProvider>
+    )
+}
 
 export default RegisterForm

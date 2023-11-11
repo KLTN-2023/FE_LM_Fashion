@@ -71,8 +71,20 @@ function UserItem() {
             </div>
             <ShoppingCartOutlined className={styles['user__cart']} />
             <Tag className={styles['user__tag']} color='white'>11</Tag>
-            {action === 'login' && <LoginModal isShowModal={isShowModel} handleCloseModal={handleCloseModal} />}
-            {action === 'register' && <RegisterModal isShowModal={isShowModel} handleCloseModal={handleCloseModal} />}
+            {action === 'login' &&
+                <LoginModal
+                    isShowModal={isShowModel}
+                    handleCloseModal={handleCloseModal}
+                    setAction={setAction}
+                />
+            }
+            {action === 'register' &&
+                <RegisterModal
+                    isShowModal={isShowModel}
+                    handleCloseModal={handleCloseModal}
+                    setAction={setAction}
+                />
+            }
         </div >
     )
 }

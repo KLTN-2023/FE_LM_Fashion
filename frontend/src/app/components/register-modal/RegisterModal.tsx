@@ -1,19 +1,23 @@
 import { Button, Divider, Flex, Image, Modal } from "antd";
 import React from "react";
-import LoginForm from "./RegisterForm";
+import RegisterForm from "./RegisterForm";
 import externalLink from '@/app/static/external-link.json'
 type ModalProps = {
     isShowModal: boolean;
-    handleCloseModal: Function
+    handleCloseModal: Function;
+    setAction: Function;
 }
 // --------------------------------------------------------
-const RegisterModal = ({ isShowModal, handleCloseModal }: ModalProps) => {
+const RegisterModal = ({ isShowModal, handleCloseModal, setAction }: ModalProps) => {
     return (
         <Modal open={isShowModal} footer={false} onCancel={() => handleCloseModal()} width={900}  >
             <Flex dir={'row'}>
-                <Image style={{ background: 'black', flex: 1, width: 300 }} src={externalLink.loginFormImage} />
-                <Divider type="vertical" style={{ height: '100' }} />
-                <LoginForm />
+                <Image 
+                    style={{ width: 400 }} preview={false}
+                    src={externalLink.loginFormImage}
+                />
+                <Divider type="vertical" style={{ height: 'inherit', flex: 0.05, border: 'none' }} />
+                <RegisterForm setAction={setAction} />
             </Flex>
         </Modal >
     )
