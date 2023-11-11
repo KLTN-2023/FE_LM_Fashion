@@ -25,11 +25,11 @@ function HeaderItems() {
         <React.Fragment >
             {
                 <ul className={styles.menu}>
-                {
-                    items.map((item) => (
-                        <li key={item.key} className={styles.menu}>{item.label}</li>
-                    ))
-                }
+                    {items.map((item) => (
+                        <li key={item.key} className={styles.menu}>
+                            {item.label}
+                        </li>
+                    ))}
                 </ul>
             }
         </React.Fragment>

@@ -12,9 +12,9 @@ export default function Home() {
     <main style={{ marginTop: '80px' }}>
       <CustomCarousel items={promotionItems} style={{ marginTop: '50px !important' }} />
       <ListData
+        itemType='card'
         itemLayout='horizontal'
         onPagination={onPagination}
-        pageSize={6}
       />
     </main>
   )
