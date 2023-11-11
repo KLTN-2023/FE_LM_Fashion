@@ -1,8 +1,8 @@
 'use client'
 import { Layout } from 'antd';
-import HeaderItem from './header-item';
-import UserItem from './user-item';
-import Logo from './logo';
+import HeaderItem from './header-item/HeaderItemIndex';
+import UserItem from './user-item/UserItemIndex';
+import Logo from './logo/LogoIndex';
 // ----------------------------------------------------------------------
 const { Header } = Layout;
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { List } from "antd";
 import { listGridStyle } from "./common/constants";
-import Footer from "./list-footer";
-import Header from "./list-header";
+import Footer from "./ListDataFooter";
+import Header from "./ListDataHeader";
 import { CardItemProps, ListDataProps } from "./type";
-import CardItem from "./card-item";
+import CardItem from "./ListDataCard";
 // -----------------------------------------------------------------------
 const DEFAULT_PAGE_SIZE = 4
 

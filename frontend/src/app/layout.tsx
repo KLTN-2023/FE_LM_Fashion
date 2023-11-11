@@ -2,7 +2,7 @@ import { Layout } from 'antd'
 import { Footer } from 'antd/es/layout/layout'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import CustomHeader from './components/header'
+import CustomHeader from './components/header/HeaderIndex'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })

@@ -1,5 +1,5 @@
-import { Card, List, Skeleton,Image } from "antd"
-import { CardItemProps } from "../type"
+import { Card, List, Skeleton, Image } from "antd"
+import { CardItemProps } from "./type"
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from "@ant-design/icons"
 import Meta from "antd/es/card/Meta"
 const imageItem = "https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/April2023/Ao_thun_cotton_in_Care_Share_moi-6.jpg"
