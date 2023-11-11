@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import menuItem from '@/app/static/header-item.json';
 import styles from './styles.module.scss';
-import LoginModal from '../../login-model/LoginModel';
+import LoginModal from '../../login-modal/LoginModal';
+import RegisterModal from '../../register-modal/RegisterModal';
 // ----------------------------------------------
 type MenuClickEvent = MenuProps['onClick'];
 type Action = 'login' | 'register' | null
@@ -30,8 +31,9 @@ function UserItem() {
                 setIsShowModel(true)
                 setAction('login')
                 break;
-            case 'logout':
-                setIsLogin(false);
+            case 'register':
+                setIsShowModel(true)
+                setAction('register')
                 break;
             default:
                 break;
@@ -70,7 +72,7 @@ function UserItem() {
             <ShoppingCartOutlined className={styles['user__cart']} />
             <Tag className={styles['user__tag']} color='white'>11</Tag>
             {action === 'login' && <LoginModal isShowModal={isShowModel} handleCloseModal={handleCloseModal} />}
-
+            {action === 'register' && <RegisterModal isShowModal={isShowModel} handleCloseModal={handleCloseModal} />}
         </div >
     )
 }
