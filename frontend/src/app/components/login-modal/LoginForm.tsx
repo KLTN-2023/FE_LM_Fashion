@@ -18,7 +18,9 @@ const LoginForm = ({ setAction }: LoginForm) => {
     const formikBag = useFormik({
         initialValues,
         validationSchema,
-        onSubmit
+        onSubmit,
+        validateOnChange: false,
+        validateOnBlur: false
     })
 
     return (
@@ -32,8 +34,7 @@ const LoginForm = ({ setAction }: LoginForm) => {
                 <Title style={{ marginBottom: 20 }} level={2}> Đăng nhập</Title>
                 <Paragraph> {staticText.loginDescription} </Paragraph>
                 <Divider />
-                <FMTextField
-                    placeholder={'Email của bạn'} name={'email'} allowClear />
+                <FMTextField placeholder={'Email của bạn'} name={'email'} allowClear />
                 <FMKPasswordField placeholder={'Mật khẩu'} name={'password'} allowClear />
                 <FMSubmitButton formStyle={{ marginTop: 40 }} context={'Đăng nhập'} />
                 <Button style={{ width: '100%' }} size="large" >Quên mật khẩu</Button>

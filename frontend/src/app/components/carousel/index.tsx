@@ -15,7 +15,7 @@ type CustomCarouselProps = {
 // -------------------------------------------------- //
 const CustomCarousel: React.FC<CustomCarouselProps> = ({ items, arrows, ...other }: CustomCarouselProps) => {
     return (
-        <Carousel autoplay style={other.style && { border: 'none' }} arrows={arrows} autoplaySpeed={3000}>
+        <Carousel autoplay style={Object.assign({ border: 'none' }, { ...other.style })} arrows={arrows} autoplaySpeed={3000}>
             {items && items.map((item) => (
                 <div key={item.key}>
                     <Image

@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main style={{ marginTop: '80px' }}>
-      <CustomCarousel items={promotionItems} style={{ marginTop: '50px !important' }} />
+      <CustomCarousel items={promotionItems}  />
       <ListData
         itemType='card'
         itemLayout='horizontal'

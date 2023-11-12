@@ -10,11 +10,11 @@ type RegisterFormikProps = {
 }
 // --------------------------------------------------------
 const initialValues: RegisterFormikProps = {
-    name: 'test',
-    email: 'test@gmail.com',
-    password: '123456789',
-    confirmPassword: '123456789',
-    phone: '123456789',
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
 
 }
 
