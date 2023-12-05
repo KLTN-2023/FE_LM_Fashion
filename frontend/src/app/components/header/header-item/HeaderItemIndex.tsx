@@ -24,9 +24,9 @@ function HeaderItems() {
     return (
         <React.Fragment >
             {
-                <ul className={styles.menu}>
+                <ul className={styles.menu} >
                     {items.map((item) => (
-                        <li key={item.key} className={styles.menu}>
+                        <li key={item.key} className={styles.menu} >
                             {item.label}
                         </li>
                     ))}

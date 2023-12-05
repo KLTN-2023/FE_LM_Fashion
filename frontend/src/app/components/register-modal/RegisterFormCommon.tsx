@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { isNaturalNumber } from '@/app/interactor/validation';
 import * as Yup from 'yup';
 // --------------------------------------------------------
 type RegisterFormikProps = {
@@ -15,7 +15,6 @@ const initialValues: RegisterFormikProps = {
     password: '',
     confirmPassword: '',
     phone: '',
-
 }
 
 const createValidationSchema = () => {
@@ -35,6 +34,12 @@ const createValidationSchema = () => {
         phone: Yup.string()
             .min(10, 'Số điện thoại không hợp lệ')
             .required('Vui lòng nhập số điện thoại')
+            .test('isNumber', 'Số điện thoại không hợp lệ', (value) => {
+                if (value) {
+                    return !isNaturalNumber(value)
+                }
+                return false
+            }),
     })
 }
 

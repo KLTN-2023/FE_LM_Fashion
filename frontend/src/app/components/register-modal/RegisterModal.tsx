@@ -1,7 +1,7 @@
-import { Button, Divider, Flex, Image, Modal } from "antd";
+import { Divider, Flex, Image, Modal } from "antd";
 import React from "react";
-import RegisterForm from "./RegisterForm";
 import externalLink from '@/app/static/external-link.json'
+import RegisterForm from "./RegisterForm";
 type ModalProps = {
     isShowModal: boolean;
     handleCloseModal: Function;

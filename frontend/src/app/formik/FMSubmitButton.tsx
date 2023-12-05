@@ -1,24 +1,20 @@
-import { Button, Form } from "antd"
-import { useField, useFormikContext } from "formik"
 import React from "react";
-import { useCallback } from "react";
+import { Button, Form } from "antd";
+import { useFormikContext } from "formik";
 // --------------------------------------------------------
-type SubmitButtonProps = {
+type Props = {
     name?: string;
-    context?: string
+    text?: string
     type?: "text" | "link" | "default" | "primary" | "dashed" | undefined
     fieldStyle?: React.CSSProperties;
     formStyle?: React.CSSProperties;
 }
 // --------------------------------------------------------
-const FMSubmitButton = ({ name, context, type,...props }: SubmitButtonProps) => {
-    // const [field, meta] = useField({ name })
-    const { submitForm, values } = useFormikContext()
+const FMSubmitButton = ({ text, type, ...props }: Props) => {
+    const { submitForm } = useFormikContext()
 
     return (
-        <Form.Item 
-            style={props?.formStyle}
-            >
+        <Form.Item style={props?.formStyle}>
             <Button
                 style={{ width: '100%' }}
                 type={type ? type : "primary"}
@@ -26,7 +22,7 @@ const FMSubmitButton = ({ name, context, type,...props }: SubmitButtonProps) => 
                 size="large"
                 onClick={() => submitForm()}
             >
-                {context}
+                {text}
             </Button>
         </Form.Item>
     )

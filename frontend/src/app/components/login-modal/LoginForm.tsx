@@ -4,7 +4,7 @@ import { Button, Divider, Form } from "antd";
 import Paragraph from "antd/es/typography/Paragraph";
 import Title from "antd/es/typography/Title";
 import staticText from '@/app/static/home-text.json';
-import { FMKPasswordField, FMSubmitButton, FMTextField } from "@/app/formik";
+import { FMPasswordField, FMSubmitButton, FMTextField } from "@/app/formik";
 import { LoginFormikProps, initialValues, createValidationSchema as validationSchema } from "./LoginFormCommon";
 // --------------------------------------------------------
 type LoginForm = {
@@ -35,8 +35,8 @@ const LoginForm = ({ setAction }: LoginForm) => {
                 <Paragraph> {staticText.loginDescription} </Paragraph>
                 <Divider />
                 <FMTextField placeholder={'Email của bạn'} name={'email'} allowClear />
-                <FMKPasswordField placeholder={'Mật khẩu'} name={'password'} allowClear />
-                <FMSubmitButton formStyle={{ marginTop: 40 }} context={'Đăng nhập'} />
+                <FMPasswordField placeholder={'Mật khẩu'} name={'password'} allowClear />
+                <FMSubmitButton formStyle={{ marginTop: 40 }} text={'Đăng nhập'} />
                 <Button style={{ width: '100%' }} size="large" >Quên mật khẩu</Button>
                 <Button
                     style={{ paddingLeft: 0, marginTop: 10 }}

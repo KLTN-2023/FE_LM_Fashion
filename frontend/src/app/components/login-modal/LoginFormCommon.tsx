@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import * as Yup from 'yup';
 // --------------------------------------------------------
 type LoginFormikProps = {

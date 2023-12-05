@@ -1,26 +1,28 @@
-import { Button, Divider, Flex, Form, Input, InputNumber } from "antd";
-import { RegisterFormikProps, initialValues, createValidationSchema } from "./RegisterFormCommon";
+import { useCallback } from "react";
+import { Button, Divider, Flex, Form } from "antd";
+import { FormikProvider, useFormik } from "formik";
 import Title from "antd/es/typography/Title";
 import staticText from '@/app/static/home-text.json'
-import { FormikProvider, useFormik } from "formik";
-import { FMSubmitButton, FMTextField } from "@/app/formik";
-import FMPasswordField from "@/app/formik/FMPasswordField";
+import { FMSubmitButton, FMTextField, FMPasswordField } from "@/app/formik";
 import Paragraph from "antd/es/typography/Paragraph";
+import { RegisterFormikProps, initialValues, createValidationSchema } from "./RegisterFormCommon";
 // --------------------------------------------------------
 type RegisterForm = {
     setAction: Function
 }
 // --------------------------------------------------------
 const RegisterForm = ({ setAction }: RegisterForm) => {
-    const handleChangeAction = () => {
+    const handleChangeAction = useCallback(() => {
         setAction('login')
-    }
+    }, [])
+
+    const onSubmit = useCallback((values: RegisterFormikProps) => {
+        console.log(values)
+    }, [])
+
     const fomrikBag = useFormik({
         initialValues,
-        onSubmit: (values: RegisterFormikProps) => {
-            console.log(values)
-            fomrikBag.resetForm()
-        },
+        onSubmit,
         validationSchema: createValidationSchema,
         validateOnChange: false,
         validateOnBlur: false
@@ -32,7 +34,7 @@ const RegisterForm = ({ setAction }: RegisterForm) => {
                 title="Đăng ký" 
                 autoComplete="false"
             >
-                <Title style={{ marginBottom: 20 }} level={2} > Đăng ký</Title>
+                <Title style={{ marginBottom: 20 }} level={2}>Đăng ký</Title>
                 <Paragraph>{staticText.registerDescription}</Paragraph>
                 <Divider />
                 <Flex wrap="wrap" gap={10} justify={'space-between'} >
@@ -42,7 +44,7 @@ const RegisterForm = ({ setAction }: RegisterForm) => {
                 <FMTextField placeholder={'Email'} name={'email'} allowClear />
                 <FMPasswordField placeholder={'Mật khẩu'} name={'password'} allowClear />
                 <FMPasswordField placeholder={'Nhập lại mật khẩu'} name={'confirmPassword'} allowClear />
-                <FMSubmitButton context={'Đăng ký'} />
+                <FMSubmitButton text={'Đăng ký'} />
                 <Button
                     type={'link'} style={{ paddingLeft: 0 }}
                     onClick={handleChangeAction}>
